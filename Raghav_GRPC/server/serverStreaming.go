@@ -11,7 +11,7 @@ func (s *helloServer) SayHelloServerStreaming(req *pb.Namelist, stream pb.GreetS
 	fmt.Println("this is the list of the names ", req.Names)
 	for i, name := range req.Names {
 		res := &pb.HelloResponse{
-			Message: "name " + strconv.Itoa(i) + name,
+			Message: "name " + strconv.Itoa(i) + " " + name,
 		}
 		if err := stream.Send(res); err != nil {
 			return err
