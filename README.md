@@ -1,37 +1,87 @@
-# Golang-GRPC
-In this we are  going to create a GRPC project using golang
+
+# Golang-GRPC Example
+
+This repository demonstrates a complete gRPC implementation in Go, featuring unary, server streaming, client streaming, and bidirectional streaming APIs. The project is organized for clarity and modularity, making it easy to understand and extend.
+
+## Features
+- **Unary RPC**: Simple request-response interaction.
+- **Server Streaming RPC**: Server sends a stream of responses for a single client request.
+- **Client Streaming RPC**: Client sends a stream of requests to the server and receives a single response.
+- **Bidirectional Streaming RPC**: Both client and server exchange streams of messages.
+
+## Project Structure
+```
+Raghav_GRPC/
+├── client/
+│   ├── bidirectionalStream.go
+│   ├── clientStram.go
+│   ├── main.go
+│   ├── serverStreaming.go
+│   └── unaryAPI.go
+├── proto/
+│   ├── greet_grpc.pb.go
+│   ├── greet.pb.go
+│   └── greet.proto
+├── server/
+│   ├── bidirectionalStream.go
+│   ├── clientstream.go
+│   ├── main.go
+│   ├── serverStreaming.go
+│   └── unaryAPI.go
+├── go.mod
+└── go.sum
+```
+
+## Getting Started
+
+### Prerequisites
+- Go 1.18+
+- Protocol Buffers compiler (`protoc`)
+- `protoc-gen-go` and `protoc-gen-go-grpc` plugins
+
+### Installation
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/RaghavMoudgil/Golang-GRPC.git
+    cd Golang-GRPC/Raghav_GRPC
+    ```
+2. Install dependencies:
+    ```sh
+    go mod tidy
+    ```
+3. Generate gRPC code from proto files:
+    ```sh
+    protoc --go_out=. --go-grpc_out=. proto/greet.proto
+    ```
+
+### Running the Server
+1. Start the gRPC server:
+    ```sh
+    go run server/main.go
+    ```
+
+### Running the Client
+1. In a separate terminal, run the client:
+    ```sh
+    go run client/main.go
+    ```
+
+## How It Works
+- The server implements all gRPC service methods defined in `proto/greet.proto`.
+- The client demonstrates usage of all RPC types by calling respective methods.
+- Communication is handled using Protocol Buffers for efficient serialization.
+
+## Customization
+- Modify `proto/greet.proto` to add new RPC methods or messages.
+- Regenerate Go code after changes using the `protoc` command above.
+
+## Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
 
-# basics 
-There are 4 types of grpc API
-1. Unary API (liek rest API server to client, client to server )-><-
-2. server straming (server to client, sequence of msgs)<-
-3. client streaming (client to server)->
-4.Bi- directional straming(stream of data frokm both end client-><-server) this one is most common, this  asynconus both are working at the same time, it is not a queue but afterall that order of msgs is preserved
-
-# setting up
-
-after creating your protofile you need to generate go code for it 
-    install protocol buffer for windows
-
-    use protoc --version 
-
-    use abvoe command to check proto is install correctly or not 
-    if not change system variables 
-
-# commad to conver proto file into go files 
-
-protoc --go_out=. --go-grpc_out=. location of your proto file
-
-with the above command two files will be created with pb.go extention 
 
 
-# code in the serve to start the server 
-
-# code in the client to start the client server 
 
 
-    
 
- 
 
