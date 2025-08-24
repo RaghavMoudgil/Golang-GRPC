@@ -22,7 +22,7 @@ func callSayhelloBiDirectionalStraming(client pb.GreetServiceClient, names *pb.N
 		for {
 			message, err := stream.Recv()
 			if err == io.EOF {
-				return
+				break
 			}
 			if err != nil {
 				log.Fatalf("error while reciving stream", err)
@@ -42,9 +42,9 @@ func callSayhelloBiDirectionalStraming(client pb.GreetServiceClient, names *pb.N
 		}
 
 		time.Sleep(time.Second)
-		stream.CloseSend()
-		<-ch
-
-		fmt.Println("bi-directinal stream ended ")
 	}
+	stream.CloseSend()
+	<-ch
+
+	fmt.Println("bi-directinal stream ended ")
 }
