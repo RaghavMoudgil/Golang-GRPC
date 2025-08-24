@@ -1,6 +1,6 @@
 
 # Golang-GRPC Example
-
+**gRPC** stands for **Google Remote Procedure Call**
 This repository demonstrates a complete gRPC implementation in Go, featuring unary, server streaming, client streaming, and bidirectional streaming APIs. The project is organized for clarity and modularity, making it easy to understand and extend.
 
 ## Features
