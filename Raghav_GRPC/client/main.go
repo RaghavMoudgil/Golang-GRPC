@@ -2,6 +2,7 @@ package main
 
 import (
 	pb "Raghav_GRPC/proto"
+	"fmt"
 	"log"
 
 	"google.golang.org/grpc"
@@ -25,5 +26,16 @@ func main() {
 	name := &pb.Namelist{
 		Names: []string{"Raghav", "Moudgil"},
 	}
-	callSayhelloServerStraming(client, name) //calling server streaming
+	// fmt.Println("------------------server stream -------------------")
+
+	// callSayhelloServerStraming(client, name) //calling server streaming
+	// fmt.Println("-------------end-------------------")
+	// fmt.Println("-------------client stream-------------------")
+
+	// callSayhelloClientStraming(client, name) //colling client straming
+	fmt.Println("------------------end -------------------")
+	fmt.Println("------------------Bi-directional stram-------------------")
+	callSayhelloBiDirectionalStraming(client, name)
+	fmt.Println("------------------end -------------------")
+
 }

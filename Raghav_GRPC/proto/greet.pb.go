@@ -246,12 +246,12 @@ const file_proto_greet_proto_rawDesc = "" +
 	"\bNamelist\x12\x14\n" +
 	"\x05names\x18\x01 \x03(\tR\x05names\"*\n" +
 	"\fMessagesList\x12\x1a\n" +
-	"\bmessages\x18\x01 \x03(\tR\bmessages2\xda\x02\n" +
+	"\bmessages\x18\x01 \x03(\tR\bmessages2\xdc\x02\n" +
 	"\fGreetService\x12@\n" +
 	"\bSayhello\x12\x16.greet_service.NoParam\x1a\x1c.greet_service.HelloResponse\x12R\n" +
 	"\x17SayHelloServerStreaming\x12\x17.greet_service.Namelist\x1a\x1c.greet_service.HelloResponse0\x01\x12U\n" +
-	"\x17SayHelloClientStreaming\x12\x1b.greet_service.HelloRequest\x1a\x1b.greet_service.MessagesList(\x01\x12]\n" +
-	"\x1eSayHelloBiDirectionalStreaming\x12\x1b.greet_service.HelloRequest\x1a\x1c.greet_service.HelloResponse(\x01B\tZ\a./protob\x06proto3"
+	"\x17SayHelloClientStreaming\x12\x1b.greet_service.HelloRequest\x1a\x1b.greet_service.MessagesList(\x01\x12_\n" +
+	"\x1eSayHelloBiDirectionalStreaming\x12\x1b.greet_service.HelloRequest\x1a\x1c.greet_service.HelloResponse(\x010\x01B\tZ\a./protob\x06proto3"
 
 var (
 	file_proto_greet_proto_rawDescOnce sync.Once
